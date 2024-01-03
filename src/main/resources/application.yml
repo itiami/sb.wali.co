@@ -1,0 +1,49 @@
+# Server Configuration
+server:
+  port: 3010
+  error:
+    include-message: always
+  address: 192.168.1.200
+
+spring:
+  web:
+    resources:
+      add-mappings: true
+
+---
+# Postgress Configuration
+spring:
+  datasource:
+    name: ds_postgres
+    driver-class-name: org.postgresql.Driver
+    username: numan
+    password: 2204
+    hikari:
+      schema: desiSoft
+    url: jdbc:postgresql://localhost:5432/ndb
+
+# Hibernate Configuration
+jpa:
+  database: POSTGRESQL
+  show-sql: true
+  hibernate:
+    ddl-auto: create
+  # ddl-auto: create-drop means tables with create & drop soon app stop running
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+  generate-ddl: true
+
+---
+# h2 configuratition
+# spring:
+#   datasource:
+#     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#     driver-class-name: org.h2.Driver
+#     username: sa
+#     password:
+#   h2:
+#     console:
+#       enabled: true
+#       path: /h2-console
