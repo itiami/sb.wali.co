@@ -9,8 +9,15 @@
   --bgLight: rgb(241, 241, 241);
 }
 
+a{
+  text-decoration: none;
+}
+
 header {
+  background-color: darkgray;
   font-family: "Nova Round", sans-serif;
+  padding: 1rem;
+  width: 100vw;
 }
 
 body {
@@ -29,5 +36,15 @@ body {
 
 .light-theme {
   background-color: var(--bgLight);
+  color: black;
+}
+
+
+.items{
+  display: flex;
+  gap: 2rem;
+}
+
+.navItems{
   color: black;
 }

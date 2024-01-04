@@ -5,6 +5,9 @@ public class Route {
     private String path;
 
     // Constructor
+
+    public Route(){}
+
     public Route(String name, String path) {
         this.name = name;
         this.path = path;

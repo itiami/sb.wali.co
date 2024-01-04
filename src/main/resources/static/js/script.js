@@ -1,12 +1,16 @@
 
 function title(){
-    document.getElementById('title').addEventListener('mouseover',()=>{
-        document.getElementById('title').style.color = "red";
+    document.getElementsByClassName('navItems').forEach(el=>{
+    el.addEventListener('mouseover',()=>{
+            el.style.color = "red";
+        });
+
+        el.addEventListener('mouseleave',()=>{
+            el.style.color = "";
+        })
     })
 
-    document.getElementById('title').addEventListener('mouseleave',()=>{
-        document.getElementById('title').style.color = "";
-    })
+
 }
 
 title();

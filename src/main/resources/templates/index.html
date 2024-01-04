@@ -8,13 +8,11 @@
 <body>
     <div>
         <header>
-            <h2 id="title" th:text="${message}">
-            </h2> <span>Welcome to Themeleaf</span>
+            <div  class="items">
+                <a class="navItems" th:each="item : ${routeList}" th:href="${item.path}" th:text="${item.name}">Link</a>
+            </div>
         </header>
-        <!-- <div th:each="item : ${routeList}">
-            Name: <span th:text="${item.name}"></span>,
-            Path: <span th:text="${item.path}"></span>
-        </div> -->
+
     </div>
 
     <script th:src="@{/js/script.js}"></script>

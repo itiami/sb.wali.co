@@ -1,5 +1,6 @@
 package co.wali.W3Soft.routes;
 
+import com.fasterxml.jackson.core.JsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.method.HandlerMethod;
@@ -34,7 +35,7 @@ public class RouteService {
         return routes;
     }
 
-    public JSONArray routeList() throws Exception {
+    public List<Route> routeList() throws Exception {
         JSONArray jsonArray = new JSONArray();
         List<Route> routes = new ArrayList<>();
         getAllRoutes().toMap().entrySet().forEach(el -> {
@@ -43,9 +44,9 @@ public class RouteService {
 
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(routes);
-        System.out.println(jsonString);
         // jsonArray.put(jsonString);
-        return jsonArray;
+
+        return routes;
     }
 
 }
