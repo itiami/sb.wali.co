@@ -9,7 +9,7 @@
   --bgLight: rgb(241, 241, 241);
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -18,6 +18,7 @@ header {
   font-family: "Nova Round", sans-serif;
   padding: 1rem;
   width: 100vw;
+  position: sticky;
 }
 
 body {
@@ -39,12 +40,18 @@ body {
   color: black;
 }
 
-
-.items{
+.items {
   display: flex;
   gap: 2rem;
 }
 
-.navItems{
+.navItems {
   color: black;
+  transition: all 300ms;
+}
+
+.navItems:hover {
+  border-bottom: 0.8rem solid whitesmoke;
+  border-radius: 10%;
+  margin-bottom: -0.8rem;
 }

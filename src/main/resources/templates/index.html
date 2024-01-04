@@ -8,13 +8,13 @@
 <body>
     <div>
         <header>
-            <div  class="items">
+            <div id="data-holder" data-mydata="[[${routeList}]]"></div>
+            <div class="items">
                 <a class="navItems" th:each="item : ${routeList}" th:href="${item.path}" th:text="${item.name}">Link</a>
             </div>
         </header>
 
     </div>
-
     <script th:src="@{/js/script.js}"></script>
 </body>
 

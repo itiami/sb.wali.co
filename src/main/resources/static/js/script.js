@@ -1,15 +1,7 @@
 
-function title(){
-    document.getElementsByClassName('navItems').forEach(el=>{
-    el.addEventListener('mouseover',()=>{
-            el.style.color = "red";
-        });
-
-        el.addEventListener('mouseleave',()=>{
-            el.style.color = "";
-        })
-    })
-
+function title() {
+    var data = document.getElementById('data-holder').getAttribute('data-mydata');
+    console.log(data);
 
 }
 
