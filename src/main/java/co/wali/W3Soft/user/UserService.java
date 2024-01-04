@@ -12,9 +12,18 @@ public class UserService {
     private UserRepository userRepository;
 
     // CRUD methods
-    public User createUser(User user) {
-        return userRepository.save(user);
+    public void createUser(User user) {
+        System.out.println("UserService: "+ user);
+        if (user != null) {
+             userRepository.save(user);
+        }else{
+
+        }
     }
+
+    /*public User createUser(User user) {
+        return userRepository.save(user);
+    }*/
 
     public List<User> getAllUsers() {
         return userRepository.findAll();

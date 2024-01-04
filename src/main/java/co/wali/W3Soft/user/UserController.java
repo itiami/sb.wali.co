@@ -3,6 +3,8 @@ package co.wali.W3Soft.user;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +22,14 @@ public class UserController {
     UserService userService;
 
     @PostMapping
-    public User addUser(@RequestBody User user) {
-        System.out.println(user);
-        return userService.createUser(user);
+    public ResponseEntity<String> addUser(@RequestBody UserDTO userDTO) {
+        if (userDTO != null && userDTO.getData() != null) {
+            System.out.println("UserDTO: " + userDTO.getData());
+            userService.createUser(userDTO.getData());
+            return ResponseEntity.ok("User created successfully with ID: " + userDTO.getData().getId());
+        } else {
+            return ResponseEntity.badRequest().body("Invalid UserDTO provided");
+        }
     }
 
     @GetMapping
