@@ -1,3 +1,33 @@
-body{
-    background-color: cadetblue;
+@import url(https://fonts.googleapis.com/css?family=Varela+Round:regular);
+@import url(https://fonts.googleapis.com/css?family=Nova+Round:regular);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --bgDark: rgb(49, 48, 48);
+  --bgLight: rgb(241, 241, 241);
+}
+
+header {
+  font-family: "Nova Round", sans-serif;
+}
+
+body {
+  font-family: "Varela Round";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.dark-theme {
+  background-color: var(--bgDark);
+  color: rgb(224, 220, 220);
+}
+
+.light-theme {
+  background-color: var(--bgLight);
+  color: black;
 }

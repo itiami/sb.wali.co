@@ -1,0 +1,38 @@
+[
+    {
+        "name": "routes",
+        "path": ""
+    },
+    {
+        "name": "sysObj",
+        "path": "/tuto/SysObj"
+    },
+    {
+        "name": "asObj",
+        "path": "/tuto/obj"
+    },
+    {
+        "name": "asString",
+        "path": "/tuto/str"
+    },
+    {
+        "name": "asHashMap",
+        "path": "/tuto/asHashMap"
+    },
+    {
+        "name": "error",
+        "path": "/error"
+    },
+    {
+        "name": "errorHtml",
+        "path": "/error"
+    },
+    {
+        "name": "asList",
+        "path": "/tuto/asList"
+    },
+    {
+        "name": "home",
+        "path": "/home"
+    }
+]

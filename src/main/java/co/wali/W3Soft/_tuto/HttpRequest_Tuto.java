@@ -9,30 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.wali.W3Soft.RouteService;
 
 @RestController()
-@RequestMapping("/routes")
-public class Routes {
+@RequestMapping("/tuto")
+public class HttpRequest_Tuto {
 
     @Autowired
     private Environment env;
-
-    @Autowired
-    RouteService routeService;
-
-    // http://192.168.1.200:3010/routes
-    @GetMapping(path = "")
-    public StringBuilder routes() {
-        StringBuilder stringBuilder = new StringBuilder();
-        routeService.getAllRoutes().forEach((k, v) -> {
-            stringBuilder.append(v);
-            stringBuilder.append(": ");
-            stringBuilder.append("http://192.168.1.200:3030" + k + "\n<br>");
-        });
-        System.out.println(stringBuilder);
-        return stringBuilder;
-    }
 
     // http://192.168.1.200:3010/
     @GetMapping(path = "/str")

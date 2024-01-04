@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
-<body>
-<h2 id="title" th:text="${message}"></h2> <span>Welcome to Themeleaf</span>
 
-<script th:src="@{/js/script.js}"></script>
+<body>
+    <div>
+        <header>
+            <h2 id="title" th:text="${message}">
+            </h2> <span>Welcome to Themeleaf</span>
+        </header>
+        <!-- <div th:each="item : ${routeList}">
+            Name: <span th:text="${item.name}"></span>,
+            Path: <span th:text="${item.path}"></span>
+        </div> -->
+    </div>
+
+    <script th:src="@{/js/script.js}"></script>
 </body>
+
 </html>
