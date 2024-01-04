@@ -21,8 +21,8 @@ spring:
     username: numan
     password: 2204
     hikari:
-      schema: desiSoft
-    url: jdbc:postgresql://192.168.1.200:5432/ndb
+      schema: sb.wali.co
+    url: jdbc:postgresql://192.168.1.235:5432/nDB
 
 # Hibernate Configuration
 jpa:

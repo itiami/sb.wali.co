@@ -21,17 +21,18 @@ public class Routes {
     @Autowired
     RouteService routeService;
 
-
     // http://192.168.1.200:3010/routes
     @GetMapping(path = "")
-    public String routes() {
-        StringBuilder stringBuilder = new StringBuilder(routeService.getAllRoutes().toString());
-        routeService.getAllRoutes();
+    public StringBuilder routes() {
+        StringBuilder stringBuilder = new StringBuilder();
+        routeService.getAllRoutes().forEach((k, v) -> {
+            stringBuilder.append(v);
+            stringBuilder.append(": ");
+            stringBuilder.append("http://192.168.1.200:3030" + k + "\n<br>");
+        });
         System.out.println(stringBuilder);
-        return routeService.getAllRoutes().toString();
+        return stringBuilder;
     }
-
-
 
     // http://192.168.1.200:3010/
     @GetMapping(path = "/str")
@@ -74,7 +75,6 @@ public class Routes {
         System.out.println(loadDotEnv().toString(4));
         return loadDotEnv().toString(4);
     }
-
 
     public void someMethod() {
         String activeProfiles = env.getProperty("JAVA_HOME");
