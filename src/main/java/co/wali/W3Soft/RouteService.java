@@ -6,6 +6,8 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
@@ -14,8 +16,8 @@ public class RouteService {
     @Autowired
     private RequestMappingHandlerMapping requestMappingHandlerMapping;
 
-    public JSONObject getAllRoutes() {
-        JSONObject routes = new JSONObject();        
+    public Map<String, String> getAllRoutes() {
+        Map<String, String> routes = new HashMap<>();
         Map<RequestMappingInfo, HandlerMethod> handlerMethods = requestMappingHandlerMapping.getHandlerMethods();
 
         handlerMethods.forEach((key, value) -> {

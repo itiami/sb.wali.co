@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import co.wali.W3Soft.RouteService;
 
 @RestController()
-@RequestMapping("/tuto")
-public class Welcome {
+@RequestMapping("/routes")
+public class Routes {
 
     @Autowired
     private Environment env;
@@ -21,8 +21,20 @@ public class Welcome {
     @Autowired
     RouteService routeService;
 
+
+    // http://192.168.1.200:3010/routes
+    @GetMapping(path = "")
+    public String routes() {
+        StringBuilder stringBuilder = new StringBuilder(routeService.getAllRoutes().toString());
+        routeService.getAllRoutes();
+        System.out.println(stringBuilder);
+        return routeService.getAllRoutes().toString();
+    }
+
+
+
     // http://192.168.1.200:3010/
-    @GetMapping
+    @GetMapping(path = "/str")
     public String asString() {
         String str = "Welcome to Spring Boot by W3Soft";
         return str;
@@ -63,14 +75,6 @@ public class Welcome {
         return loadDotEnv().toString(4);
     }
 
-    // http://192.168.1.200:3010/routes
-    @GetMapping(path = "/routes", produces = "application/json")
-    public String routes() {
-        StringBuilder stringBuilder = new StringBuilder(routeService.getAllRoutes().toString());
-        routeService.getAllRoutes();
-        System.out.println(stringBuilder);
-        return routeService.getAllRoutes().toString(2);
-    }
 
     public void someMethod() {
         String activeProfiles = env.getProperty("JAVA_HOME");

@@ -3,7 +3,6 @@ server:
   port: 3010
   error:
     include-message: always
-  address: 192.168.1.200
 
 spring:
   web:
@@ -23,7 +22,7 @@ spring:
     password: 2204
     hikari:
       schema: desiSoft
-    url: jdbc:postgresql://localhost:5432/ndb
+    url: jdbc:postgresql://192.168.1.200:5432/ndb
 
 # Hibernate Configuration
 jpa:
