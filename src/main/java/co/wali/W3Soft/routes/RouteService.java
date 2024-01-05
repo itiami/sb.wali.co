@@ -36,16 +36,10 @@ public class RouteService {
     }
 
     public List<Route> routeList() throws Exception {
-        JSONArray jsonArray = new JSONArray();
         List<Route> routes = new ArrayList<>();
         getAllRoutes().toMap().entrySet().forEach(el -> {
             routes.add(new Route(el.getKey(), el.getValue().toString()));
         });
-
-        ObjectMapper mapper = new ObjectMapper();
-        String jsonString = mapper.writeValueAsString(routes);
-        // jsonArray.put(jsonString);
-
         return routes;
     }
 

@@ -8,7 +8,7 @@
 <body>
     <div>
         <header>
-            <div id="data-holder" data-mydata="[[${routeList}]]"></div>
+            <div id="myData" th:data-myattribute="${forJs}"></div>
             <div class="items">
                 <a class="navItems" th:each="item : ${routeList}" th:href="${item.path}" th:text="${item.name}">Link</a>
             </div>
